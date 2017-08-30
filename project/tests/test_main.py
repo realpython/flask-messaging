@@ -2,12 +2,13 @@
 
 
 import json
-import unittest
 
-from project import create_app
+flask_testing import TestCase
+
+from project import create_app, db
 
 
-class TestMainBlueprint(unittest.TestCase):
+class TestMainBlueprint(TestCase):
     """Tests for the Main Blueprint."""
 
     def setUp(self):
@@ -17,7 +18,7 @@ class TestMainBlueprint(unittest.TestCase):
 
     def test_users(self):
         """Ensure the /ping route behaves correctly."""
-        response = self.client().get('/ping')
+        response = self.client.get('/ping')
         data = json.loads(response.data.decode())
         self.assertEqual(response.status_code, 200)
         self.assertIn('pong!', data['message'])
