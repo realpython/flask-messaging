@@ -16,7 +16,7 @@ class TestMainBlueprint(unittest.TestCase):
         self.client = self.app.test_client
 
     def test_config(self):
-        """Ensure the /ping route behaves correctly."""
+        """Ensure the app is setup correctly."""
         self.assertTrue(self.app.config['TESTING'])
         self.assertTrue(self.app.config['DEBUG'])
         self.assertEqual(self.app.config['SECRET_KEY'], 'change_me')
