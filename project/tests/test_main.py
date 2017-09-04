@@ -17,7 +17,6 @@ class TestMainBlueprint(unittest.TestCase):
 
     def test_config(self):
         """Ensure the /ping route behaves correctly."""
-        print(self.app.config)
         self.assertTrue(self.app.config['TESTING'])
         self.assertTrue(self.app.config['DEBUG'])
         self.assertEqual(self.app.config['SECRET_KEY'], 'change_me')
