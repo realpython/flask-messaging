@@ -10,7 +10,7 @@ from project import db, create_app
 from project.api import models
 
 
-app = create_app(config_name=os.getenv('APP_SETTINGS'))
+app = create_app(config_name=os.getenv('ENVIRONMENT'))
 migrate = Migrate(app, db)
 manager = Manager(app)
 
